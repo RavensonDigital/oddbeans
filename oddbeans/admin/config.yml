@@ -1,0 +1,52 @@
+# ============================================================
+#  ODD BEANS — CMS configuration
+#  >>> IMPORTANT: change the `repo:` line below to YOUR repo
+#      (format: github-username/repo-name)
+# ============================================================
+backend:
+  name: github
+  repo: RavensonDigital/oddbeans   # <-- CHANGE THIS to your GitHub repo
+  branch: main
+
+# Where uploaded images go (if you add image fields later)
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "homepage"
+        label: "Homepage"
+        file: "content.json"
+        description: "Edit the text on your homepage. Changes publish automatically."
+        fields:
+          - { label: "Top small line (above the big heading)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Big heading — first part", name: "hero_headline_start", widget: "string" }
+          - { label: "Big heading — highlighted word", name: "hero_headline_em", widget: "string" }
+          - { label: "Intro paragraph", name: "hero_lede", widget: "text" }
+
+          - { label: "Story heading", name: "story_heading", widget: "string" }
+          - { label: "Story — italic lead line", name: "story_lead", widget: "string" }
+          - { label: "Story paragraph 1", name: "story_p1", widget: "text" }
+          - { label: "Story paragraph 2", name: "story_p2", widget: "text" }
+
+          - { label: "Address line 1", name: "contact_address_line1", widget: "string" }
+          - { label: "Address line 2", name: "contact_address_line2", widget: "string" }
+          - { label: "Instagram handle (no @)", name: "contact_instagram", widget: "string" }
+
+          - label: "Opening hours"
+            name: "hours"
+            widget: "list"
+            summary: "{{fields.day}} — {{fields.time}}"
+            fields:
+              - { label: "Day(s)", name: "day", widget: "string" }
+              - { label: "Time", name: "time", widget: "string" }
+
+          - label: "Coffee menu"
+            name: "menu"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - { label: "Drink", name: "name", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }

@@ -1,0 +1,32 @@
+{
+  "hero_eyebrow": "Petone · Imperial Park",
+  "hero_headline_start": "Coffee with",
+  "hero_headline_em": "character.",
+  "hero_lede": "A boutique little coffee haven tucked into a Petone warehouse — house espresso, a coconut flat white worth the detour, and a welcome from Saby that keeps people coming back.",
+
+  "story_heading": "A hidden gem, with heart.",
+  "story_lead": "Some cafés serve coffee. This one has character.",
+  "story_p1": "Tucked into Imperial Park, just past Mitre 10 MEGA, Odd Beans turns a Petone warehouse unit into something unexpectedly warm — soaring ceilings and polished concrete softened by rattan chairs, trailing plants and gold-framed vintage prints. It's the kind of place you stumble across once and return to weekly.",
+  "story_p2": "At the heart of it is owner Saby, whose energy is half the reason regulars rave. She'll remember your order, make you the best coconut flat white you've had, and send you off better than you arrived.",
+
+  "contact_address_line1": "13/41 Bouverie Street, Imperial Park",
+  "contact_address_line2": "Petone, Lower Hutt · near Mitre 10 MEGA",
+  "contact_instagram": "oddb_eans",
+
+  "hours": [
+    { "day": "Mon – Fri", "time": "7:00am – 3:00pm" },
+    { "day": "Saturday", "time": "8:00am – 2:00pm" },
+    { "day": "Sunday", "time": "8:00am – 1:00pm" }
+  ],
+
+  "menu": [
+    { "name": "Flat White", "price": "5 / 6" },
+    { "name": "Coconut Flat White", "price": "6 / 7" },
+    { "name": "Latte", "price": "5 / 6" },
+    { "name": "Cappuccino", "price": "5 / 6" },
+    { "name": "Mocha", "price": "5 / 6" },
+    { "name": "Long Black", "price": "5 / 6" },
+    { "name": "Hot Chocolate", "price": "5 / 6" },
+    { "name": "Chai Latte", "price": "5 / 6" }
+  ]
+}
