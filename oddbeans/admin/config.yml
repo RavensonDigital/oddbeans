@@ -1,8 +1,5 @@
 # ============================================================
-#  ODD BEANS — CMS configuration (split into sections)
-#  Each section below appears as its own item in the CMS,
-#  so the owner can edit just ONE thing (e.g. hours) at a time.
-#  >>> Make sure the repo + base_url lines match your setup.
+#  ODD BEANS — CMS configuration (working single-file version)
 # ============================================================
 backend:
   name: github
@@ -15,35 +12,27 @@ public_folder: "/images"
 
 collections:
   - name: "site"
-    label: "Edit Website"
+    label: "Website Content"
     files:
-      # ---- SECTION 1: Homepage wording ----
-      - name: "homepage_text"
-        label: "✏️  Homepage Text"
+      - name: "homepage"
+        label: "Homepage"
         file: "content.json"
-        description: "The wording at the top of your homepage and your story."
+        description: "Edit the text on your homepage. Changes publish automatically."
         fields:
           - { label: "Top small line (above the big heading)", name: "hero_eyebrow", widget: "string" }
           - { label: "Big heading — first part", name: "hero_headline_start", widget: "string" }
           - { label: "Big heading — highlighted word", name: "hero_headline_em", widget: "string" }
           - { label: "Intro paragraph", name: "hero_lede", widget: "text" }
+
           - { label: "Story heading", name: "story_heading", widget: "string" }
           - { label: "Story — italic lead line", name: "story_lead", widget: "string" }
           - { label: "Story paragraph 1", name: "story_p1", widget: "text" }
           - { label: "Story paragraph 2", name: "story_p2", widget: "text" }
-          # hidden fields keep the other sections' data intact when saving this file
-          - { label: "Address line 1", name: "contact_address_line1", widget: "hidden" }
-          - { label: "Address line 2", name: "contact_address_line2", widget: "hidden" }
-          - { label: "Instagram", name: "contact_instagram", widget: "hidden" }
-          - { label: "Hours", name: "hours", widget: "hidden" }
-          - { label: "Menu", name: "menu", widget: "hidden" }
 
-      # ---- SECTION 2: Opening hours (edit these on their own) ----
-      - name: "opening_hours"
-        label: "📅  Opening Hours"
-        file: "content.json"
-        description: "Change your opening hours here. Add or remove rows as needed."
-        fields:
+          - { label: "Address line 1", name: "contact_address_line1", widget: "string" }
+          - { label: "Address line 2", name: "contact_address_line2", widget: "string" }
+          - { label: "Instagram handle (no @)", name: "contact_instagram", widget: "string" }
+
           - label: "Opening hours"
             name: "hours"
             widget: "list"
@@ -51,26 +40,7 @@ collections:
             fields:
               - { label: "Day(s)", name: "day", widget: "string" }
               - { label: "Time", name: "time", widget: "string" }
-          # hidden fields preserve everything else in the file
-          - { label: "x", name: "hero_eyebrow", widget: "hidden" }
-          - { label: "x", name: "hero_headline_start", widget: "hidden" }
-          - { label: "x", name: "hero_headline_em", widget: "hidden" }
-          - { label: "x", name: "hero_lede", widget: "hidden" }
-          - { label: "x", name: "story_heading", widget: "hidden" }
-          - { label: "x", name: "story_lead", widget: "hidden" }
-          - { label: "x", name: "story_p1", widget: "hidden" }
-          - { label: "x", name: "story_p2", widget: "hidden" }
-          - { label: "x", name: "contact_address_line1", widget: "hidden" }
-          - { label: "x", name: "contact_address_line2", widget: "hidden" }
-          - { label: "x", name: "contact_instagram", widget: "hidden" }
-          - { label: "x", name: "menu", widget: "hidden" }
 
-      # ---- SECTION 3: Coffee menu (edit on its own) ----
-      - name: "coffee_menu"
-        label: "☕  Coffee Menu"
-        file: "content.json"
-        description: "Add, remove or re-price drinks."
-        fields:
           - label: "Coffee menu"
             name: "menu"
             widget: "list"
@@ -78,35 +48,3 @@ collections:
             fields:
               - { label: "Drink", name: "name", widget: "string" }
               - { label: "Price", name: "price", widget: "string" }
-          - { label: "x", name: "hero_eyebrow", widget: "hidden" }
-          - { label: "x", name: "hero_headline_start", widget: "hidden" }
-          - { label: "x", name: "hero_headline_em", widget: "hidden" }
-          - { label: "x", name: "hero_lede", widget: "hidden" }
-          - { label: "x", name: "story_heading", widget: "hidden" }
-          - { label: "x", name: "story_lead", widget: "hidden" }
-          - { label: "x", name: "story_p1", widget: "hidden" }
-          - { label: "x", name: "story_p2", widget: "hidden" }
-          - { label: "x", name: "contact_address_line1", widget: "hidden" }
-          - { label: "x", name: "contact_address_line2", widget: "hidden" }
-          - { label: "x", name: "contact_instagram", widget: "hidden" }
-          - { label: "x", name: "hours", widget: "hidden" }
-
-      # ---- SECTION 4: Contact details (edit on their own) ----
-      - name: "contact_details"
-        label: "📍  Contact & Address"
-        file: "content.json"
-        description: "Your address and Instagram handle."
-        fields:
-          - { label: "Address line 1", name: "contact_address_line1", widget: "string" }
-          - { label: "Address line 2", name: "contact_address_line2", widget: "string" }
-          - { label: "Instagram handle (no @)", name: "contact_instagram", widget: "string" }
-          - { label: "x", name: "hero_eyebrow", widget: "hidden" }
-          - { label: "x", name: "hero_headline_start", widget: "hidden" }
-          - { label: "x", name: "hero_headline_em", widget: "hidden" }
-          - { label: "x", name: "hero_lede", widget: "hidden" }
-          - { label: "x", name: "story_heading", widget: "hidden" }
-          - { label: "x", name: "story_lead", widget: "hidden" }
-          - { label: "x", name: "story_p1", widget: "hidden" }
-          - { label: "x", name: "story_p2", widget: "hidden" }
-          - { label: "x", name: "hours", widget: "hidden" }
-          - { label: "x", name: "menu", widget: "hidden" }
